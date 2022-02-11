@@ -1,0 +1,86 @@
+{%- extends 'lab/index.html.j2' -%}
+
+{%- block html_head_css -%}
+  {{ super() }}
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+    @font-face {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 400;
+    }
+    h1, h2, h3 {
+      font-family: "Roboto", sans-serif;
+      font-weight: bold;
+      color: #696969;
+    }
+    html {
+      font-family: "Roboto", sans-serif;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .jp-RenderedHTMLCommon :not(pre) > code {
+      font-family: "Menlo", "Inconsolata", "Consolas", "Roboto Mono", "Ubuntu Mono", "Liberation Mono", "Courier New", monospace;
+      border: 1px solid #e8e8e8;
+      border-radius: 3px;
+    }
+
+    .header {
+      overflow: hidden;
+      background-color: white;
+      color: #696969;
+      font-family: "Roboto", sans-serif;
+      font-weight: bold;
+      font-size: 40px;
+      padding-left: 10px;
+      padding-top: 10px;
+      /* box-shadow: 0 6px 6px -6px rgb(0 0 0 / 30%); */
+      width: 100%;
+    }
+    .logo-container {
+      margin: auto;
+      width: fit-content;
+      float: left;
+      padding-top: 10px;
+      padding-right: 10px;
+    }
+    /* .jp-RenderedHTMLCommon :not(pre) > code { */
+    /*   font-size: 90%; */
+    /*   color: #664596; */
+    /*   word-wrap: break-word; */
+    /*   background-color: unset; */
+    /*   padding: unset; */
+    /* } */
+    {# Overloading spinner css #}
+    #loading {
+      font-family: "Roboto", sans-serif
+    }
+    .voila-spinner-color1{
+      fill: #696969;
+    }
+    .voila-spinner-color2{
+      fill: #E5E5E5;
+    }
+
+  </style>
+{%- endblock html_head_css -%}
+
+{% block body_header %}
+  <body class="jp-Notebook theme-light" style="padding: 0; margin: 0;">
+  <div class="header">
+    {% set nb_title = nb.metadata.get("title", "") or resources["metadata"]["name"] %}
+    <p>{{nb_title}}</p>
+    {% if "authors" in nb.metadata %}
+      <p style="font-size:50%">{{nb.metadata.authors | join(', ', attribute='name')}}</p>
+    {% endif %}
+  </div>
+  <div style="padding: 20px; margin: 20px;">
+  {{ super() }}
+{% endblock body_header %}
+
+{% block body_footer %}
+  </div>
+  </body>
+  {{ super() }}
+{% endblock body_footer %}
