@@ -50,7 +50,7 @@ html {
 }
 .header p#title:before {
   font-family: "Font Awesome 6 Free";
-  content: "\f02a"
+  content: "\f085"
 }
 .logo-container {
   margin: auto;
