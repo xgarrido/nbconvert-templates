@@ -24,7 +24,7 @@
     {% set nb_title = nb.metadata.get("title") or resources["metadata"]["name"] %}
     <p id="title"> {{nb_title}}</p>
     {% if "authors" in nb.metadata %}
-      <p style="font-size:50%">{{nb.metadata.authors | join(', ', attribute='name')}}</p>
+      <p style="font-size:50%; padding-left: 70px">{{nb.metadata.authors | join(', ', attribute='name')}}</p>
     {% endif %}
   </div>
   <div style="padding: 100px; margin: 20px; width: 80%; margin-left: auto; margin-right: auto;">

@@ -1,6 +1,5 @@
 :root {
-  --headings: #696969;
-  --highlight-background: #f6f6f6;
+  /* --headings: #696969; */
   --black: #2f3337;
   --gray: #656e77;
   --red: #c02d2e;
@@ -8,6 +7,10 @@
   --green: #54790d;
   --orange: #b75501;
   --violet: #803378;
+  --headings: var(--blue);
+  --highlight-background: #f6f6f6;
+  --border-radius: 0.4em;
+  --border-left: 3px solid lightgrey;
 }
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @font-face {
@@ -25,6 +28,15 @@ html {
   margin-left: auto;
   margin-right: auto;
 }
+
+.jp-RenderedHTMLCommon {
+  color: var(--black);
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  /* line-height: var(--jp-content-line-height); */
+  padding-right: 20px;
+}
+
 .jp-RenderedHTMLCommon :not(pre) > code {
   font-family: "Menlo", "Inconsolata", "Consolas", "Roboto Mono", "Ubuntu Mono", "Liberation Mono", "Courier New", monospace;
   border: 1px solid #e8e8e8;
@@ -52,18 +64,16 @@ html {
   font-family: "Font Awesome 6 Free";
   content: "\f085"
 }
-.logo-container {
-  margin: auto;
-  width: fit-content;
-  float: left;
-  padding-top: 10px;
-  padding-right: 10px;
+.jp-CodeCell .jp-InputArea-editor {
+  border: none;
 }
-.highlight {
-  border-left: 3px solid lightgrey;
-  padding-bottom:2px !important;
-  padding-top:2px !important;
-  padding-left:5px !important;
+.jp-CodeCell .jp-InputArea {
+  border: var(--jp-border-width) solid var(--jp-cell-editor-border-color);
+  border-radius: var(--border-radius);
+  border-left: var(--border-left);
+  padding-bottom: 2px !important;
+  padding-top: 2px !important;
+  padding-left: 5px !important;
   background: var(--highlight-background) !important;
   color: var(--black) !important;
 }
@@ -77,10 +87,8 @@ html {
 .highlight .c1  { color: var(--gray); font-style: italic }
 .highlight .cs  { color: var(--gray); font-weight: bold; font-style: italic }
 .highlight .gd  { color: var(--red) }
-.highlight .gd  { color: var(--red) }
 .highlight .gr  { color: var(--red) }
 .highlight .gh  { color: var(--gray) }
-.highlight .gi  { color: var(--green) }
 .highlight .gi  { color: var(--green) }
 .highlight .gs  { color: var(--orange); font-weight: normal }
 .highlight .gu  { color: var(--gray) }
@@ -124,6 +132,7 @@ html {
 .highlight .vg  { color: var(--orange) }
 .highlight .vi  { color: var(--orange) }
 .highlight .il  { color: var(--orange) }
+
 .jp-InputPrompt, .jp-OutputPrompt {
   display: none;
 }
@@ -131,7 +140,7 @@ html {
 .jp-RenderedHTMLCommon a:hover,
 .jp-RenderedHTMLCommon a:visited,
 .jp-RenderedHTMLCommon code {
-  color: var(--red);
+  color: var(--blue);
   text-decoration: none;
 }
 a.anchor-link {
@@ -161,4 +170,94 @@ h1:hover a.anchor-link, h2:hover a.anchor-link, h3:hover a.anchor-link, h4:hover
 .celltag_full-width .jp-Cell-outputWrapper {
   max-width: 120%;
   width: 120%;
+}
+
+
+/* Collapsible cell content */
+div.above-output-prompt .jp-InputArea {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+div.below-output-prompt .jp-InputArea {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+div.jp-Cell details.above-input>summary {
+  color: var(--black) !important;
+  background: var(--highlight-background);
+  border: var(--jp-border-width) solid var(--jp-cell-editor-border-color);
+  padding-left: 1em;
+  padding-right: 0em;
+  border-radius: var(--border-radius);
+  border-left: var(--border-left);
+  padding-bottom: 4px !important;
+  padding-top: 4px !important;
+}
+
+div.jp-Cell details.above-input.hide[open]>summary {
+  border-bottom: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+div.jp-Cell details.above-output>summary {
+  background-color: var(--highlight-background);
+  border: var(--jp-border-width) solid var(--jp-cell-editor-border-color);
+  padding-left: 1em;
+  padding-right: 0em;
+  border-top: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-left: var(--border-left);
+  padding-bottom: 4px !important;
+  padding-top: 4px !important;
+}
+
+div.jp-Cell details.below-input>summary {
+  background-color: var(--highlight-background);
+  border: var(--jp-border-width) solid var(--jp-cell-editor-border-color);
+  padding-left: 1em;
+  padding-right: 0em;
+  border-top: none;
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+  border-left: var(--border-left);
+  padding-bottom: 4px !important;
+  padding-top: 4px !important;
+}
+
+details summary {
+  cursor: pointer;
+}
+details summary::marker {
+  color: var(--gray);
+}
+
+div.jp-Cell details.hide>summary>span {
+  color: var(--gray);
+  /* opacity: 70%; */
+}
+
+div.jp-Cell details.hide[open]>summary>span.collapsed {
+  display: none;
+}
+
+div.jp-Cell details.hide:not([open])>summary>span.expanded {
+  display: none;
+}
+
+@keyframes collapsed-fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+div.jp-Cell details.hide[open]>summary~* {
+  -moz-animation: collapsed-fade-in 0.3s ease-in-out;
+  -webkit-animation: collapsed-fade-in 0.3s ease-in-out;
+  animation: collapsed-fade-in 0.3s ease-in-out;
 }

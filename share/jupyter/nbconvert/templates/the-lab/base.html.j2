@@ -1,0 +1,45 @@
+{%- extends 'lab/base.html.j2' -%}
+
+{% block input_group -%}
+  {%- if 'hide-input' in cell.metadata.get('tags', []) -%}
+    <details class="hide above-input">
+      <summary aria-label="Toggle hidden content">
+        <span class="collapsed">Show code cell</span>
+        <span class="expanded">Hide code cell</span>
+      </summary>
+  {%- endif -%}
+  {%- if 'hide-output' in cell.metadata.get('tags', []) -%}
+  <div class="jp-Cell-inputWrapper above-output-prompt">
+  {%- elif 'hide-input' in cell.metadata.get('tags', []) -%}
+  <div class="jp-Cell-inputWrapper below-output-prompt">
+  {%- else -%}
+  <div class="jp-Cell-inputWrapper">
+  {%- endif -%}
+    <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+    </div>
+    <div class="jp-InputArea jp-Cell-inputArea">
+      <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        <div class="CodeMirror cm-s-jupyter">
+          {{ cell.source | highlight_code(metadata=cell.metadata) | clean_html }}
+        </div>
+      </div>
+    </div>
+  </div>
+  {%- if 'hide-input' in cell.metadata.get('tags', []) -%}
+    </details>
+  {%- endif -%}
+{% endblock input_group %}
+
+{% block output_group %}
+  {%- if 'hide-output' in cell.metadata.get('tags', []) -%}
+    <details class="hide below-input">
+      <summary aria-label="Toggle hidden content">
+        <span class="collapsed">Show code cell output</span>
+        <span class="expanded">Hide code cell output</span>
+      </summary>
+      {{ super() }}
+    </details>
+  {%- else %}
+    {{ super() }}
+  {%- endif -%}
+{% endblock output_group %}
