@@ -48,10 +48,10 @@ html {
   color: var(--headings);
   font-family: "Roboto", sans-serif;
   font-weight: bold;
-  font-size: 40px;
+  font-size: 35px;
   padding-left: 20px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 0px;
+  padding-bottom: 0px;
   box-shadow: 0 0.125rem 0.25rem 0 rgb(0 0 0 / 11%);
   width: 100%;
   position: fixed;
