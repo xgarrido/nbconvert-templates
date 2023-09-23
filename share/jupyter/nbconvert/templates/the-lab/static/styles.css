@@ -68,6 +68,15 @@ pre {
   font-family: "Font Awesome 6 Free";
   content: "\f085"
 }
+
+.footer {
+  clear: both;
+  color: lightgrey;
+  text-align: center;
+  font-size:12px;
+  padding: 1em;
+}
+
 .jp-CodeCell .jp-InputArea-editor {
   border: none;
 }
