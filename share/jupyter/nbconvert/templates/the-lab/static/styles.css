@@ -38,7 +38,7 @@ html {
 }
 
 pre {
-  margin: 0px;
+  margin: 10px 5px;
 }
 
 .jp-RenderedHTMLCommon :not(pre) > code {
