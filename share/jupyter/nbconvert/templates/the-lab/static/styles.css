@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 :root {
   /* --headings: #696969; */
   --black: #2f3337;
@@ -12,7 +13,6 @@
   --border-radius: 0.4em;
   --border-left: 3px solid lightgrey;
 }
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @font-face {
   font-family: "Roboto";
   font-style: normal;
