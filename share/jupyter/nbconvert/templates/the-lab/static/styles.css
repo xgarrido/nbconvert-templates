@@ -2,12 +2,17 @@
 :root {
   /* --headings: #696969; */
   --black: #2f3337;
-  --gray: #656e77;
-  --red: #c02d2e;
-  --blue: #015692;
-  --green: #54790d;
-  --orange: #b75501;
-  --violet: #803378;
+  /* --gray: #656e77; */
+  /* --red: #c02d2e; */
+  /* --blue: #015692; */
+  /* --green: #54790d; */
+  /* --orange: #b75501; */
+  /* --violet: #803378; */
+  --red: #c44e52;
+  --blue: #4c72b0;
+  --green: #55A868;
+  --orange: #dd8452;
+  --violet: #8172b3;
   --headings: var(--blue);
   --highlight-background: #f6f6f6;
   --border-radius: 0.4em;
@@ -156,6 +161,10 @@ pre {
   color: var(--blue);
   text-decoration: none;
 }
+.jp-RenderedHTMLCommon a:hover {
+  opacity: 0.75;
+}
+
 a.anchor-link {
   opacity: 0;
   font-size: .8em;
