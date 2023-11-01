@@ -134,6 +134,7 @@ pre {
 .highlight .mh  { color: var(--orange) }
 .highlight .mi  { color: var(--orange) }
 .highlight .mo  { color: var(--orange) }
+.highlight .sa  { color: var(--red) }
 .highlight .sb  { color: var(--green) }
 .highlight .sc  { color: var(--green) }
 .highlight .sd  { color: var(--green) }
