@@ -190,8 +190,10 @@ h1:hover a.anchor-link, h2:hover a.anchor-link, h3:hover a.anchor-link, h4:hover
   display: none;
 }
 .celltag_full-width .jp-Cell-outputWrapper {
-  max-width: 120%;
-  width: 120%;
+  max-width: 140%;
+  width: 140%;
+  margin-left: -20%;
+  margin-right: 20%;
 }
 
 
