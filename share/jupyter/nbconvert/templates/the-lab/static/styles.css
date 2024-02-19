@@ -43,6 +43,18 @@ html {
   padding-right: 20px;
 }
 
+.jp-RenderedHTMLCommon pre {
+  font-family: "Menlo", "Inconsolata", "Consolas", "Roboto Mono", "Ubuntu Mono", "Liberation Mono", "Courier New", monospace;
+  border: var(--jp-border-width) solid var(--jp-cell-editor-border-color);
+  border-radius: var(--border-radius);
+  padding-bottom: 2px !important;
+  padding-top: 2px !important;
+  padding-left: 5px !important;
+  background: var(--highlight-background) !important;
+  color: var(--black) !important;
+  margin-bottom: 1em;
+}
+
 pre {
   margin: 10px 5px;
 }
@@ -52,23 +64,18 @@ pre {
   border: 1px solid #e8e8e8;
   border-radius: 3px;
 }
+
 .header {
   overflow: hidden;
-  background-color: white;
   color: var(--headings);
   font-family: "Roboto", sans-serif;
   font-weight: bold;
   font-size: 35px;
-  padding-left: 20px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  box-shadow: 0 0.125rem 0.25rem 0 rgb(0 0 0 / 11%);
-  width: 100%;
-  position: fixed;
-  right: 0;
-  left: 0;
-  top: 0;
-  z-index: 1030;
+  padding: 0px;
+  margin: 20px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto
 }
 .header p#title:before {
   font-family: "Font Awesome 6 Free";
@@ -157,6 +164,7 @@ pre {
   display: none;
 }
 .jp-RenderedHTMLCommon a,
+.jp-RenderedHTMLCommon a:link,
 .jp-RenderedHTMLCommon a:hover,
 .jp-RenderedHTMLCommon a:visited,
 .jp-RenderedHTMLCommon code {
