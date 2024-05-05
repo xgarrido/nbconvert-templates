@@ -8,9 +8,19 @@
             "type": "nbconvert.preprocessors.CSSHTMLHeaderPreprocessor",
             "enabled": true
         },
-        "100-remove-skip-voila-cells": {
+        "100-remove-cells": {
             "type": "nbconvert.preprocessors.tagremove.TagRemovePreprocessor",
             "remove_cell_tags": ["remove-cell"],
+            "enabled": true
+        },
+        "100-remove-inputs": {
+            "type": "nbconvert.preprocessors.tagremove.TagRemovePreprocessor",
+            "remove_input_tags": ["remove_input"],
+            "enabled": true
+        },
+        "100-remove-outputs": {
+            "type": "nbconvert.preprocessors.tagremove.TagRemovePreprocessor",
+            "remove_all_outputs_tags": ["remove_output"],
             "enabled": true
         }
     }
