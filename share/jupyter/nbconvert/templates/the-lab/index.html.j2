@@ -40,6 +40,6 @@
   </body>
   {{ super() }}
   <div class="footer">
-    @footer@
+    {{ footer|default('@footer@') }}
   </div>
 {% endblock body_footer %}
