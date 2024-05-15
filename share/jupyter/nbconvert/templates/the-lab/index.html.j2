@@ -22,7 +22,7 @@
 
 {% block body_header %}
   <body class="jp-Notebook theme-light" style="padding: 0; margin: 0;">
-  <div class="header">
+  <div class="header" style="width: {{nb.metadata.width|default('50%')}};">
     {% set nb_title = nb.metadata.get("title") %}  {# or resources["metadata"]["name"] %} #}
     {% if nb_title %}
       <p id="title"> {{nb_title}}</p>
@@ -31,7 +31,7 @@
       <p style="font-size:50%; padding-left: 70px">{{nb.metadata.authors | join(', ', attribute='name')}}</p>
     {% endif %}
   </div>
-  <div style="padding: 0px; margin: 20px; width: 50%; margin-left: auto; margin-right: auto;">
+  <div style="padding: 0px; margin: 20px; width: {{nb.metadata.width|default('50%')}}; margin-left: auto; margin-right: auto;">
   {{ super() }}
 {% endblock body_header %}
 
