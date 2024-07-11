@@ -53,10 +53,13 @@ html {
   background: var(--highlight-background) !important;
   color: var(--black) !important;
   margin-bottom: 1em;
+  font-size: 14px;
 }
 
 pre {
+  font-family: "Menlo", "Inconsolata", "Consolas", "Roboto Mono", "Ubuntu Mono", "Liberation Mono", "Courier New", monospace;
   margin: 10px 5px;
+  font-size: 14px;
 }
 
 .jp-RenderedHTMLCommon :not(pre) > code {
