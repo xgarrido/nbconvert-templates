@@ -170,6 +170,9 @@ pre {
 .highlight .vi  { color: var(--orange) }
 .highlight .il  { color: var(--orange) }
 
+.jp-OutputArea-output {
+  display: table;
+}
 .jp-InputPrompt, .jp-OutputPrompt {
   display: none;
 }
