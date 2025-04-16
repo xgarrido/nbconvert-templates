@@ -44,10 +44,11 @@ html {
 }
 
 .jp-RenderedHTMLCommon .alert {
-  padding: var(--jp-notebook-padding);
   border-radius: var(--border-radius);
-  border-left: var(--border-left);
-  margin-bottom: 1em;
+  border-top: none;
+  border-bottom: none;
+  border-right: none;
+  border-left-width: 3px;
 }
 
 .jp-RenderedHTMLCommon pre {
