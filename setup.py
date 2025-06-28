@@ -48,15 +48,17 @@ setup_args = {
     "version": "0.0.1",
     "packages": [],
     "data_files": data_files,
-    "install_requires": [],
+    "install_requires": ["nbconvert"],
     "author": "Xavier Garrido",
     "author_email": "xavier.garrido@gmail.com",
     "url": "https://github.com/xgarrido/nbconvert-templates",
-    "cmdclass": {
-        "develop": DevelopCmd,
-    }
-    if jupyter_core_paths
-    else {},
+    "cmdclass": (
+        {
+            "develop": DevelopCmd,
+        }
+        if jupyter_core_paths
+        else {}
+    ),
 }
 
 if __name__ == "__main__":
